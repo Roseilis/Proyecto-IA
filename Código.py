@@ -9,7 +9,7 @@ prolog.consult("progr.pl")
 def consultar_aprobacion(nombre, puntos, asistencia):
 
     consulta = f"progr('{nombre}', {puntos}, {asistencia}."
-   result = bool (list(prolog.query(consulta))):
+    respuesta  = list(prolog.query(consulta))
 
      
 
