@@ -8,7 +8,7 @@ from pyswip import Prolog, Functor, Variable
 
 prolog = Prolog()
 
-prolog.assertz("progr.pl")
+prolog.consult("progr.pl")
 
 
 
