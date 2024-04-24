@@ -8,7 +8,7 @@ from pyswip import Prolog, Functor, Variable
 
 prolog = Prolog()
 
-prolog.assertz(reglas_prolog)
+prolog.consult("progr.pl")
 
 
 
@@ -22,7 +22,8 @@ def consultar_aprobacion(nombre, puntos, asistencia):
 
     consulta = f"estudiante_aprobado('{nombre}', {puntos}, {asistencia}, {resultado})."
 
-    respuesta = list(prolog.query(consulta))
+    respuesta = bool(list(prolog.query(f"progr({nombre},{puntos},{asistencia},{resultado})")))
+
 
     if respuesta:
 
